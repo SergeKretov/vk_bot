@@ -1,5 +1,5 @@
 import random
-
+import os
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 
@@ -14,7 +14,7 @@ def write_msg(user_id, message):
 
 
 # API-ключ созданный ранее
-token = "Your API token here..."
+token = os.environ.get('vk_token') #bot token from @botFather in config vars on heroku.com
 
 # Авторизуемся как сообщество
 vk = vk_api.VkApi(token=token)
